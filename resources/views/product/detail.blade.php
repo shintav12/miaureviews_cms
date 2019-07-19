@@ -422,11 +422,7 @@
                                                     <label>Category</label>
                                                     <select class="form-control select2" name="category_id">
                                                         @foreach($categories as $category)
-                                                            <?php if(isset($item)){?>
-                                                                <option <?php if($item->category_id === $category->id) echo 'selected'?> value="{{$category->id}}" selected>{{$category->title}}</option>
-                                                            <?php }else {?>
-                                                                <option value="{{$category->id}}" selected>{{$category->title}}</option>
-                                                            <?php }?>
+                                                            <option <?php if(isset($item)) if($item->category_id === $category->id) echo 'selected'?> value="{{$category->id}}">{{$category->title}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
