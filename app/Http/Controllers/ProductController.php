@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\ImageType;
 use App\Models\ObjectTag;
@@ -84,7 +85,8 @@ class ProductController extends BaseController
             "page_title" => "Productos",
             "page_subtitle" => ($id == 0 ? "Nuevo" : "Editar" ),
             "user" => session('user'),
-            "image_types" => ImageType::get()
+            "image_types" => ImageType::get(),
+            "categories" => Category::get()
         );
 
         if($id != 0){
@@ -105,6 +107,7 @@ class ProductController extends BaseController
         try{
             $id = Input::get('id');
             $image_types = ImageType::get();
+            $category_id = Input::get(category_id);
             $description = Input::get('description');
             $description = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $description);
             $matches = [];
@@ -128,6 +131,7 @@ class ProductController extends BaseController
                 $product->status = 0;
                 $product->slug = $product->get_slug($title,$product->getTable());
             }
+            $product->category_id = $category_id;
             $product->title = $title;
             $product->subtitle = $subtitle;
             $product->link_amazon = $link_amazon;

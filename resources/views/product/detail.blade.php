@@ -415,6 +415,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-xs-12 post-contnet">
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-12">
+                                                    <label>Category</label>
+                                                    <select class="form-control select2" name="category_id">
+                                                        @foreach($categories as $category)
+                                                            <?php if(isset($item)){?>
+                                                                <option <?php if($item->category_id === $category->id) echo 'selected'?> value="{{$category->id}}" selected>{{$category->title}}</option>
+                                                            <?php }else {?>
+                                                                <option value="{{$category->id}}" selected>{{$category->title}}</option>
+                                                            <?php }?>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-xs-12">
                                         <div class="form-group ">
                                             <div class="col-xs-12">

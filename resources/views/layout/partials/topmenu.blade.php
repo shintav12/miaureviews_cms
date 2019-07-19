@@ -1,7 +1,7 @@
 <div class="page-header navbar navbar-fixed-top">
     <div class="page-header-inner ">
         <div class="page-logo">
-            <img src="{{asset("img/logo-module-small.png")}}" alt="logo" class="logo-default" style="    width: 159px;
+            <img src="{{asset("img/logo-module-small.png")}}" alt="logo" class="logo-default" style="    width: 55px;
     /* margin: 4px 0px 0!important; */
     margin-top: 5px;
     margin-left: 1px;" />
