@@ -107,7 +107,7 @@ class ProductController extends BaseController
         try{
             $id = Input::get('id');
             $image_types = ImageType::get();
-            $category_id = Input::get(category_id);
+            $category_id = Input::get('category_id');
             $description = Input::get('description');
             $description = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $description);
             $matches = [];
